@@ -1,0 +1,9 @@
+---
+- name: Run start-oracle script on oracledb hosts group
+  hosts: oracledb
+  gather_facts: false  
+
+  tasks:
+    - name: Run start-oracle.sh script
+      shell: /etc/ansible/scripts/start-oracle.sh  # Script location on host
+      become: true  # Run as root?

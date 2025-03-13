@@ -1,0 +1,11 @@
+---
+- name: Apply Linux security patches
+  hosts: oracledb
+  become: yes
+
+  tasks:
+    - name: Update security patches
+      yum:
+        name: "*"
+        security: yes
+        state: latest
